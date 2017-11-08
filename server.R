@@ -110,12 +110,7 @@ server <- function(input, output) {
     proj4string(worldTour) <- proj4string(countries)
     augmentedWorldTour <- sp::over(worldTour, countries)
     
-    if(resolution == 10) {
-      visitedCountries <- unique(augmentedWorldTour$NAME) %>% na.omit %>% as.data.frame
-    } else {
-      visitedCountries <- unique(augmentedWorldTour$name) %>% na.omit %>% as.data.frame
-    }
-    
+    visitedCountries <- unique(augmentedWorldTour$NAME) %>% na.omit %>% as.data.frame
     visitedCountries$flag <- apply(visitedCountries, 1, 
                                    function(row) paste0('<img src="', strsplit(row[[1]], " ")[[1]] %>% paste(collapse = '_'), '.svg" height="40"></img>'))
     
