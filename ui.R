@@ -6,11 +6,10 @@ ui <- dashboardPage(
   dashboardHeader(title = "Your next world tour?", 
                   titleWidth = 350, 
                   dropdownMenu(type = "messages", 
-                               icon = icon("search"), 
+                               icon = icon("search", class = 'icon'), 
                                badgeStatus = NULL,
                                headerText = tags$div(class="header",
                                                      checked=NA, 
-                                                     tags$p("How to use the app:", style = "color: black; font-size:22px;font-weight:bold;"),
                                                      tags$ul(
                                                        tags$li("Click somewhere close to the coastline of interest", style = "color: black; font-size:16px;"),
                                                        tags$li(tags$div("This will reveal data from the",
@@ -28,6 +27,8 @@ ui <- dashboardPage(
   dashboardBody(tags$style(type = "text/css", "#map {height: calc(100vh - 80px) !important;}"),
                 tags$head(tags$style(HTML('.dropdown-menu {background-color:orange;}
                                           .dropdown-menu * {background-color:orange !important;}
+                                          .icon::before{content:"How to use the app"; color:black; font-size:20px; font-weight:bold;}
                                           '))),
-                leafletOutput("map"))
+                leafletOutput("map"),
+                tags$head(includeScript("google-analytics.js")))
 )
