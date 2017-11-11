@@ -49,7 +49,7 @@ server <- function(input, output) {
   
   output$map <- renderLeaflet({
     leaflet() %>%
-      setView(-0.580816, 44.836151, zoom = 8) %>%
+      setView(-0.580816, 44.836151, zoom = 7) %>%
       addProviderTiles(providers$Esri.WorldImagery, options = list(noWrap=T)) %>% 
       addProviderTiles("CartoDB.PositronOnlyLabels", options = list(noWrap=T)) %>%
       addTerminator()
