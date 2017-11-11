@@ -3,7 +3,7 @@ library(leaflet)
 
 ui <- dashboardPage(
   skin = "yellow",
-  dashboardHeader(title = "Your next world tour?", 
+  dashboardHeader(title = "What's on the other side of the sea?", 
                   titleWidth = 350, 
                   dropdownMenu(type = "messages", 
                                icon = icon("search", class = 'icon'), 
@@ -16,7 +16,7 @@ ui <- dashboardPage(
                                                                         tags$a(href="http://www.naturalearthdata.com/downloads/", target="_blank", "dataset.", style="color:blue; font-size:18px; font-weight:bold;")),
                                                                         style = "color: black; font-size:16px;"),
                                                        tags$li("Click on a point representing the beach you'll be leaving from.", style = "color: black; font-size:16px;"),
-                                                       tags$li("Imagine you're standing on this beach and facing straight out to the sea, it will show you where your next world tour will take you to!", 
+                                                       tags$li("Imagine you're standing on this beach and facing straight out to the sea, it will show you which countries your next world tour will take you to!", 
                                                                style = "color: black; font-size:16px; font-weight:bold;")
                                                        )
                                                      ),
